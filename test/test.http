@@ -1,0 +1,50 @@
+POST http://localhost:8080/users HTTP/1.1
+content-type: application/json
+
+{"name":"some name","age":24,"friends":[]}
+
+###
+
+GET  http://localhost:8080/users/1 HTTP/1.1
+content-type: application/json
+
+# 200 (OK)
+# 404 (Not Found) {"message":"NotImplementedException"}
+
+###
+
+PATCH http://localhost:8080/users/1 HTTP/1.1
+content-type: application/json
+
+{"age": 32}
+
+###
+
+DELETE http://localhost:8080/users/1 HTTP/1.1
+content-type: application/json
+
+# 200 (OK)
+# 404 (Not Found)
+
+###
+
+PUT  http://localhost:8080/users/1/friends HTTP/1.1
+content-type: application/json
+
+{"target_id":2}
+
+###
+
+GET  http://localhost:8080/users/1/friends HTTP/1.1
+content-type: application/json
+
+# 200 (OK)
+# 404 (Not Found)
+
+###
+
+DELETE http://localhost:8080/users/1/friends/2 HTTP/1.1
+content-type: application/json
+
+# 200 (OK)
+# 404 (Not Found)
